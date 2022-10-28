@@ -1,0 +1,17 @@
+-- 여기는 주석문
+-- 여기는 root 로 접속한 화면입니다
+-- SELECT : DB Server에 뭔가 요청하는 명령 키워드
+SELECT 30+40;
+SELECT '대한민국만세';
+-- || : Oracle 에서 문자열 연결, '대한민국' || '만세'
+SELECT CONCAT('대한민국',  '만세');
+
+-- world SCHEMA 를 open 하기
+-- SCHEMA = DATABASE
+USE world; -- 1. DB 를 open 하고
+SELECT * 
+FROM city; -- 2. city table 에서 데이터를 SELECT(선택)하여 보여주
+
+
+
+
