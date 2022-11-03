@@ -124,6 +124,8 @@ SELECT * FROM tbl_student;
 UPDATE tbl_student
 	SET st_num = 'S0001'
 WHERE st_num = 'S0033';
+USE schoolDB;
+SELECT * FROM tbl_student ORDER BY st_num DESC;
 
 
 
