@@ -93,7 +93,37 @@ WHERE st_num = 'S0003';
 UPDATE tbl_student 
 	SET st_num = 'S0033'
 WHERE st_num = 'S0003';
+INSERT into tbl_student(st_num, st_name)
+VALUES('S0003','임꺽정');
 
+-- tbl_student table 의  st_num 칼럼에 PK 설정되어 있다
+-- PK가 설정된 칼럼은 index 가 기본으로 설정되고
+-- index 가 설정된 칼럼을 기준으로 정렬된 결과를 기본적으로
+-- 보여준다
+SELECT * FROM tbl_student;
+
+UPDATE tbl_student
+SET st_dept = '국어국문학과'
+WHERE st_num = 'S0002';
+SELECT * FROM tbl_student;
+
+-- 학번(PK)이 st_num 인 학생의 학년, 전화번호, 주소를 변경(Update)
+UPDATE tbl_student
+SET st_dept = '국어국문학과',
+	st_grade = 1,
+	st_tel = '090-3333-3333',
+    st_addr = '전북 익산시'
+WHERE st_num ='S0002';
+SELECT * FROM tbl_student;
+
+-- 학번이  S0033 인 학생의 학번을 S0001 로 변경하라
+-- 학번이 S0033 인 데이터를 WHERE 하여 학번 데이터를 S0001 로 Update
+-- Error Code: 1062. Duplicate entry 'S0001' for key 'tbl_student.PRIMARY'
+-- 학번이 S0033 인 학생의 학번을 S0001로 변경하려고 시도했더니
+-- 이미 S0001 인 학생의 데이터가 있다. 때문에 데이터 변경이 거부된다
+UPDATE tbl_student
+	SET st_num = 'S0001'
+WHERE st_num = 'S0033';
 
 
 
