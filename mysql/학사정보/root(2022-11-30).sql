@@ -163,7 +163,9 @@ AS
 		LEFT JOIN tbl_depts
 			ON st_dpcode = dp_code
 	ORDER BY st_num
-)
+);
+
+SELECT * FROM view_students;
 
 
 
